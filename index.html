@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Samuel</title>
+</head>
+<body>
+    <div class="cursor-glow"></div>
+    <h1>Samuel John</h1>
+    <p>I like to eat</p>
+
+    <script>
+    const glow = document.querySelector('.cursor-glow');
+    document.addEventListener('mousemove', e => {
+      glow.style.left = e.pageX + 'px';
+      glow.style.top = e.pageY + 'px';
+    });
+  </script>
+</body>
+</html>
