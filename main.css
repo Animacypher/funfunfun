@@ -1,32 +1,66 @@
-body {
-      background-color: black;
-      color: white;
-      display: flex;
-      justify-content: center;   /* Centers horizontally */
-      align-items: center;       /* Centers vertically */
-      height: 100vh;             /* Full screen height */
-      margin: 0;                 /* Remove default margin */
-      flex-direction: column;    /* Stack items vertically */
-    }
+:root{
+  --bg-1: #0f172a;
+  --bg-2: #071030;
+  --card: rgba(255,255,255,0.06);
+  --muted: rgba(255,255,255,0.7);
+  --accent: #7c3aed;
+  --glass: rgba(255,255,255,0.04);
+  --max-width: 980px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
 
-    
-    .cursor-glow {
-      position: absolute;
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,0,150,0.5), transparent 70%);
-      pointer-events: none;
-      mix-blend-mode: screen;
-      transform: translate(-50%, -50%);
-      animation: colorchange 5s infinite linear;
-    }
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+  background: linear-gradient(180deg,var(--bg-1),var(--bg-2));
+  color:#e6eef8;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:48px 20px;
+}
 
-    /* Animate the color of the glow */
-    @keyframes colorchange {
-      0% { background: radial-gradient(circle, rgba(255,0,150,0.5), transparent 70%); }
-      25% { background: radial-gradient(circle, rgba(0,255,255,0.5), transparent 70%); }
-      50% { background: radial-gradient(circle, rgba(0,255,0,0.5), transparent 70%); }
-      75% { background: radial-gradient(circle, rgba(255,255,0,0.5), transparent 70%); }
-      100% { background: radial-gradient(circle, rgba(255,0,150,0.5), transparent 70%); }
-    }
+.site{width:100%;max-width:var(--max-width)}
+
+.hero{
+  text-align:center;
+  padding:48px 24px;
+  border-radius:14px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 30px rgba(2,6,23,0.6);
+}
+
+.avatar{
+  width:96px;height:96px;border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),#ff6b6b);
+  display:inline-flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:28px;color:white;margin:0 auto 18px;
+}
+
+.name{font-size:28px;margin:8px 0 6px}
+.role{color:var(--muted);margin:0 0 12px}
+.bio{max-width:720px;margin:0 auto 18px;color:var(--muted)}
+
+.actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+.btn{display:inline-block;padding:10px 14px;border-radius:10px;background:var(--glass);color:inherit;text-decoration:none;font-weight:600;border:1px solid rgba(255,255,255,0.04)}
+.btn.primary{background:linear-gradient(90deg,var(--accent),#ff6b6b);box-shadow:0 6px 18px rgba(124,58,237,0.18);border:none;color:white}
+
+.blocks{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin:28px 0}
+.block{background:var(--card);padding:18px;border-radius:12px}
+.block h2{margin:0 0 8px}
+.block p{margin:0 0 12px;color:var(--muted)}
+.link{color:var(--accent);text-decoration:none;font-weight:600}
+
+.site-footer{text-align:center;color:var(--muted);padding:18px 8px}
+
+@media (max-width:520px){
+  .name{font-size:22px}
+  .avatar{width:76px;height:76px;font-size:22px}
+  .hero{padding:28px 14px}
+}
+
+/* Small utility */
+.small{font-size:13px;color:var(--muted)}

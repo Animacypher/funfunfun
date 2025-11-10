@@ -1,22 +1,49 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Your Name — Personal Landing</title>
     <link rel="stylesheet" href="main.css">
-    <title>Samuel</title>
-</head>
-<body>
-    <div class="cursor-glow"></div>
-    <h1>Samuel John</h1>
-    <p>I like to eat</p>
+    <meta name="description" content="Personal landing page for Your Name — developer, designer, maker.">
+  </head>
+  <body>
+    <main class="site">
+      <header class="hero">
+        <div class="avatar" aria-hidden="true">YN</div>
+        <h1 class="name">Your Name</h1>
+        <p class="role">Software developer · Designer · Maker</p>
+        <p class="bio">I build web apps, open-source tools, and playful experiments. Replace this text with a short personal bio.</p>
+
+        <div class="actions">
+          <a class="btn primary" href="mailto:your@domain.com">Email</a>
+          <a class="btn" href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </header>
+
+      <section class="blocks">
+        <article class="block">
+          <h2>Latest project</h2>
+          <p>Short description of your latest project. Link to a repo or demo to showcase your work.</p>
+          <a class="link" href="#">View project →</a>
+        </article>
+
+        <article class="block">
+          <h2>About</h2>
+          <p>A quick note about your background, skills, and what you're working on.</p>
+          <a class="link" href="#">Read more →</a>
+        </article>
+      </section>
+
+      <footer class="site-footer">
+        <small>© <span id="year">2025</span> Your Name — Built with ❤️. Replace placeholder text in <code>index.html</code>.</small>
+      </footer>
+    </main>
 
     <script>
-    const glow = document.querySelector('.cursor-glow');
-    document.addEventListener('mousemove', e => {
-      glow.style.left = e.pageX + 'px';
-      glow.style.top = e.pageY + 'px';
-    });
-  </script>
-</body>
+      // Small JS to set current year; non-critical enhancement
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>
